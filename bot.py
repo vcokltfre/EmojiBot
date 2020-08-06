@@ -50,7 +50,8 @@ if __name__ == "__main__":
 
     cogs = [
         "cogs.emojilist",
-        "cogs.status"
+        "cogs.status",
+        "cogs.admin"
     ]
 
     bot.load_extensions(cogs)
