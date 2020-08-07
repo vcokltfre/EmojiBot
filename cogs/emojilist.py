@@ -34,6 +34,13 @@ class Emojilist(commands.Cog):
             message += " " + get_emoji(self.bot.emojis, name)
         await ctx.channel.send(message)
 
+    @commands.command(name="invite")
+    async def einvite(self, ctx):
+        botID = self.bot.user.id
+        inv = f"https://discord.com/api/oauth2/authorize?client_id={botID}&permissions=355328&scope=bot"
+        embed = discord.Embed(title="Invite EmojiBot", description="Invite me to your server to be able to use any emoji, any time.", url=inv, colour=0xFF2F2F)
+        await ctx.channel.send(embed=embed)
+
     @esearch.error
     async def search_error(self, ctx, error):
         if isinstance(error, MissingRequiredArgument):
