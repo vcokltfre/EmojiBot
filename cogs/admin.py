@@ -43,6 +43,7 @@ class Admin(commands.Cog):
         s = ""
         for guild in self.bot.guilds:
             s += f"{guild.name} {len(guild.members)}\n"
+        await ctx.channel.send(s)
 
 def setup(bot):
     bot.add_cog(Admin(bot))
