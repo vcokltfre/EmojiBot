@@ -35,5 +35,14 @@ class Admin(commands.Cog):
 
         await ctx.channel.send(embed=embed)
 
+    @commands.command(name="lsguild", hidden=True)
+    async def lsguild(self, ctx):
+        if not ctx.author.id in owners:
+            await ctx.channel.send("You don't have permission to run this command!", delete_after=10)
+            return
+        s = ""
+        for guild in self.bot.guilds:
+            s += f"{guild.name} {len(guild.members)}\n"
+
 def setup(bot):
     bot.add_cog(Admin(bot))
