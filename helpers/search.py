@@ -29,7 +29,7 @@ def get_emoji(emojis: List[discord.Emoji], nameOrID):
         emoji = f"<:{item.name}:{item.id}>"
     return emoji
 
-def gen_embeds(emojis: List[discord.Emoji], query: str, const = 5) -> list:
+def gen_embeds(emojis: List[discord.Emoji], query: str, const = 15) -> list:
     valid = search(emojis, query)
 
     length = len(valid) // const + 1
